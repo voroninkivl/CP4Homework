@@ -27,11 +27,13 @@ common=[]
 if len(mas1)>=len(mas2):
     for i in range(0,len(mas1)):
         if mas1[i] in mas2:
-            common.append(mas1[i])
+            if mas1[i] not in common:
+                common.append(mas1[i])
 else:
     for i in range(0,len(mas2)):
         if mas2[i] in mas1:
-            common.append(mas2[i])
+            if mas1[i] not in common:
+                common.append(mas2[i])
 if len(common)<1:
     print("У массивов нет общих элементов :(")
 else:
